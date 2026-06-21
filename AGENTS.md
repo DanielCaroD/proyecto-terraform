@@ -274,6 +274,8 @@ terraform apply
 
 sin necesidad de realizar configuraciones manuales en la consola de Google Cloud.
 
+---
+
 # Tiempo de estabilización de la infraestructura
 
 Después de ejecutar:
