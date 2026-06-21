@@ -273,3 +273,32 @@ terraform apply
 ```
 
 sin necesidad de realizar configuraciones manuales en la consola de Google Cloud.
+
+# Tiempo de estabilización de la infraestructura
+
+Después de ejecutar:
+
+```bash
+terraform apply
+```
+
+la infraestructura puede requerir algunos minutos para quedar completamente operativa.
+
+El proceso normal es:
+
+1. Creación de las VMs.
+2. Inicialización del sistema operativo.
+3. Ejecución de los startup scripts.
+4. Instalación de Nginx.
+5. Ejecución de los Health Checks.
+6. Propagación del HTTP Load Balancer.
+
+Durante este periodo, el acceso a la IP pública puede devolver errores temporales.
+
+Por esta razón, cualquier agente automático o revisor debe esperar aproximadamente **2 a 5 minutos** antes de concluir que el despliegue ha fallado.
+
+La verificación de funcionamiento debe realizarse únicamente después de que ambos backends aparezcan como:
+
+```text
+1 de 1 healthy
+```
