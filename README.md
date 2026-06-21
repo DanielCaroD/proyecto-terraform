@@ -178,15 +178,3 @@ terraform destroy
 * El acceso a Internet se realiza mediante Cloud NAT.
 * El firewall únicamente permite tráfico HTTP proveniente de los Health Checks de Google Cloud.
 * Los usuarios externos solo conocen la IP pública del Load Balancer.
-
----
-
-# Evidencias
-
-Agregar en esta sección las capturas de:
-
-1. Balanceador funcionando.
-2. Backends saludables.
-3. Máquinas virtuales sin IP pública.
-4. Pruebas de los tres escenarios.
-5. Ejecución exitosa de `terraform destroy`.
